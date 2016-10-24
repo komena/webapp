@@ -1,0 +1,35 @@
+<div>
+	<a ui-sref="overview" class="pull-right btn btn-primary btn-outline btn-rounded">Back to Overview</a>
+	<span class="glyphicon glyphicon-dashboard bg-fade"></span>
+	<br /><br /><br /><br /><br /><br />
+	<div class="jumbotron">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<form name="paymentForm" role="form">
+						<div class="form-group">
+						<p>Make payment to <b>{{ selectedContact.name }}</b>
+						</div>
+						<div class="form-group">
+							<label>Amount</label>
+							<input type="text" ng-model="amount" />
+						</div>
+						<div class="form-group">
+							<label>Reason</label>
+							<textarea ng-model="reason"></textarea>
+						</div>
+						<div class="form-group">
+						<button ng-click="makePayment()">Send</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-4">
+				<h3>Contacts( {{contacts.length}} )</h3>
+					<div ng-repeat="contact in contacts">
+						<a href="#" ng-click="selectContact(contact)">{{ contact.name }}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

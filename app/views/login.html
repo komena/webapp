@@ -1,0 +1,37 @@
+<!--
+Inspired by http://dribbble.com/shots/917819-iPad-Calendar-Login?list=shots&sort=views&timeframe=ever&offset=461
+-->
+<div class="row">
+	<div class="col-md-1" ><a ui-sref="about_us">About Us</a>	  
+	</div>
+	<div class="col-md-2"><a ui-sref="how_it_works">
+		How It Works</a>  
+	</div>
+</div>
+<div class="login-page">
+	<div class="row">
+		<div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+        	<img src="images/popmoney.jpg" class="user-avatar" />
+			<h1>Quick and Easy <br><small>Money Exchange Solution</small></h1>
+			<form role="form" name="loginForm" ng-submit="submit()">
+
+				<div class="form-content">
+					<div class="form-group">
+						<input type="email" ng-model="email" class="form-control input-underline input-lg" name="emailAddress" placeholder="Email">
+						<span ng-show="loginForm.emailAddress.$error.email">Not a valid e-mail address</span>
+					</div>
+
+					<div class="form-group">
+						<input type="password" ng-model="password" class="form-control input-underline input-lg" id="" placeholder="Password">
+					</div>
+				</div>
+
+				<button type="submit" input style="background-color:brown" class="btn btn-white btn-outline btn-lg btn-rounded pull-left">Login</button>
+				<a ui-sref="signup" input style="background-color:brown" class="btn btn-white btn-outline btn-sm btn-rounded pull-right">Sign Up</a>
+
+			</form>
+
+		</div>	
+	</div>
+
+</div>
