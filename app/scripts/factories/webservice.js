@@ -1,6 +1,7 @@
 angular.module('yapp')
 .factory('webService', ['$http', '$localStorage', function(http, localStorage){
-    var webServiceUrl = "http://localhost:3000"; // "http://api.payment.akintoye.me/"; // appConfig.apiUrl;
+    // var webServiceUrl = "http://localhost:3000"; 
+    var webServiceUrl = "https://api.payment.akintoye.me";
     var config = {
         dataType: 'jsonp',
         headers: {}
@@ -8,6 +9,7 @@ angular.module('yapp')
     if(localStorage.token != undefined){
         config.headers = localStorage.token;
     }
+    config.headers["Content-Type"] = "application/json";
 
     var api = {};
     api.resourceType = {};

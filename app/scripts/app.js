@@ -12,8 +12,10 @@ angular
   .module('yapp', [
     'ui.router',
     'ngAnimate',
-    'ngStorage'
+    'ngStorage',
+    'angularPayments'
   ])
+  
   .config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.when('/dashboard', '/dashboard/overview');
@@ -25,6 +27,11 @@ angular
         url: '',
         templateUrl: 'views/base.html'
       })
+      .state('general', {
+          url: '/general',
+          parent: 'base',
+          templateUrl: 'views/general.html'
+        })
         .state('login', {
           url: '/login',
           parent: 'base',
@@ -37,16 +44,17 @@ angular
           templateUrl: 'views/signup.html',
           controller: 'SignupCtrl'
         })
+          .state('addBank', {
+          url: '/addBank',
+          parent: 'base',
+          templateUrl: 'views/addBank.html',
+          controller: 'addBankCtrl'
+        })
         .state('dashboard', {
           url: '/dashboard',
           parent: 'base',
           templateUrl: 'views/dashboard.html',
           controller: 'DashboardCtrl'
-        })
-        .state('general', {
-          url: '/general',
-          parent: 'base',
-          templateUrl: 'views/general.html'
         })
         .state('contacts', {
           url: '/contacts',
@@ -64,6 +72,12 @@ angular
             url: '/overview',
             parent: 'dashboard',
             templateUrl: 'views/dashboard/overview.html'
+          })
+          .state('settings', {
+            url: '/settings',
+            parent: 'base',
+            templateUrl: 'views/dashboard/settings.html'
+
           })
           .state('new_payments', {
             url: '/new_payments',
@@ -102,4 +116,8 @@ angular.module('yapp').factory('httpInterceptor', function httpInterceptor ($q, 
 
 angular.module('yapp').config(function($httpProvider) {
     $httpProvider.interceptors.push('httpInterceptor');
+});
+
+angular.module('yapp').config(function($windowProvider) {
+    $windowProvider.$get().Stripe.setPublishableKey('pk_test_QdTeRzHzR2JDHKMxuXK1zKdn');
 });

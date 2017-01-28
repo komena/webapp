@@ -1,0 +1,52 @@
+
+
+
+
+
+<div class="dashboard-page">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+
+       <div class="text-center">
+        <h4 class="brand">Quick and Easy<br> <small>Money Exchange Solution</small></h4>
+        <img src="images/flat-avatar.png" class="user-avatar" /><br />
+        <a ui-sref="login" class="btn btn-white btn-outline btn-rounded btn-sm">Logout</a>
+      </div>
+
+      <ul class="nav nav-sidebar">
+        <li ng-class="{active: $state.includes('add_contacts')}"><a ui-sref="add_contacts">Profile</a></li>
+        <li><a ui-sref="addBank()">Add Card</a></li>
+        <li><a href="http://www.strapui.com/ani-angularjs-theme">Help</a></li>
+      </ul>
+
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    	<div>
+	<a ui-sref="dashboard" class="pull-right btn btn-primary btn-outline btn-rounded">Home</a>
+	<h2>Settings<small></small></h2>
+	<div class="jumbotron">
+		<div class="container">
+    <div class="form-group">
+    <div style="height:80px">
+              <label><h5>PROFILE NAME</h5></label>
+              <br>
+              <input type="text" ng-model="profileName" placeholder="Profile Name" style = "height:30px; width:300px;"/>
+            </div>
+            <label><h5>PHONE NUMBER</h5></label>
+              <br>
+              <input type="phonenumber" ng-model="phoneNumber" placeholder="Phone Number" style = "height:30px; width:300px;"/>
+            </div>
+              <label><h5>ADDRESS</h5></label>
+              <br>
+              <input type="text" ng-model="address" placeholder="Address" style = "height:30px; width:300px;"/>
+            </div>
+			
+		</div>
+	</div>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

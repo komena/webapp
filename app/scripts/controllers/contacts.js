@@ -4,17 +4,12 @@ angular.module('yapp')
       $scope.contacts = [];
     	webService.get('contacts')
     	.success(function(data, status, headers, config){
-        console.log(data);
         $scope.contacts = data.data;
-    		var header = headers();
-    		console.log(header);
-    		console.log(header['access-token']);
     	})
     	.error(function(data, status, headers, config) {
         console.log(data);
        console.log('Invalid credential');           
           })
-
   }]);
 
 
@@ -42,12 +37,10 @@ angular.module('yapp')
           }
         webService.post('contacts', postData)
         .success(function(data, status, headers, config){
-          console.log(data);
-          console.log(data);
-         var header = headers();
+          alert(member.name + " was added successfully");
         })
         .error(function(data, status, headers, config) {
-          console.log(data);          
+          alert("Sorry, contact has already been added");       
             });
       }
     }

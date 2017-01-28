@@ -1,0 +1,22 @@
+<div style="background-color:#3ca2e0;height:700px;">
+	<div class="row">
+		<div class="col-md-4 col-lg-4 col-md-offset-4 col-lg-offset-4">
+        	<img src="images/popmoney.jpg" width="120" class="user-avatar" />
+			<h1>Quick and Easy <br>
+			<small>Money Exchange Solution</small></h1>
+			<form stripe-form="stripeCallback" name="checkoutForm">
+		    <input ng-model="number" placeholder="0000000000000000" 
+		             payments-format="card" payments-validate="card" name="card" />
+		    <input ng-model="expiry" placeholder="MM/YY" 
+		             payments-format="expiry" payments-validate="expiry"                
+		             name="expiry" />
+		    <input ng-model="cvc" placeholder="CVC" payments-format="cvc" payments-validate="cvc" name="cvc" />
+		    <div ng-if="checkoutForm.card.$invalid">
+			    Error: invalid card number!
+			</div>
+		    <button type="submit">Submit</button>
+		</form>
+		</div>	
+	</div>
+	<br><br><br>
+</div>
